@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>for validation check box </title>
+        <script> 
+        function validate(){
+            var valid = false;
+            if(document.getElementById("javascript").checked){
+                valid =true;
+            }
+            else if(document.getElementById("jquery").checked){
+                valid =true;
+            }
+            else if(document.getElementById("angularjs").checked){
+                valid =true;
+            }
+            else if(document.getElementById("nodejs").checked){
+                valid =true;
+            }
+            if(valid){
+                alert("validation successfully");
+            }
+            else{
+                alert("select any one technology");
+                return false;
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h3>Select the technology</h3>
+        <form  name="myform" onsubmit="return validate()">
+        <input type="checkbox" id="javascript" value="javascript">javascript 
+        <input type="checkbox" id="jquery" value="jquery">jquery 
+        <input type="checkbox" id="angularjs" value="angularjs">angularjs
+        <input type="checkbox" id="nodejs" value="nodejs">nodejs
+        <input type="submit" value="submit"/>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./new_row.css"> -->
+    <!-- <script src="./new_row.js" defer ></script> -->
+    <script src="./New_Row_Data.js" defer ></script>
+    <!-- <script src="./newkey_value_store.js" defer ></script> -->
+    <title>Table</title>
+</head>
+<body>
+    <h2>print value</h2>
+        <div class="container">
+            <div id ="data">
+                <input type="text" id ="namefield" value="Kumkum" placeholder="enter name" autocomplete="on"><br><br>
+                <input type="text" id ="subjectfield" value = "Electronics" placeholder="enter subject"><br><br>
+                <input type="number" id ="marksfield" value = "700" placeholder="enter marks"><br><br>
+                <button id="add">add</button><br><br>
+            </div>
+    <div id="Table">
+        <table border ="1" id = 'tbl'>
+            <thead>
+                <tr>
+                    <div id="container">
+                    <th scope="col">Name</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Marks</th>
+                </div>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Kumkum</td>
+                <td>science</td>
+                <td>44</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
