@@ -1,20 +1,42 @@
 let btnAdd=document.getElementById('add');
+let btnRem = document.getElementById('remove')
 let Table=document.getElementById('tbl');
 let nameInput=document.getElementById('namefield');
 let subjectInput=document.querySelector('#subjectfield');
 let marksInput=document.querySelector('#marksfield');
 
+console.log('Refreshed!');
+const items={
+    ...localStorage
+}
+console.log(items)
+for( var key in items){
+const info =JSON.parse(items[key])
+const template = `
+<tr>
+<td>${info.name}</td>
+<td>${info.subject}</td>
+ <td>${info.marks}</td>
+</tr>
+`
+console.log(template)
+Table.innerHTML+=template
+}
+
+
 btnAdd.addEventListener('click',()=>{
     let name1 =nameInput.value;
     let subjectname=subjectInput.value;
     let marks=marksInput.value;
-    let info =  `
-        Name:'${name1}',
-        Subject:'${subjectname}',
-        mark:'${marks}'
-        `
-        console.log(info)
-    localStorage.setItem('info',info);
+    let info =  JSON.stringify({
+        name:name1,
+        subject:subjectname,
+        marks:marks
+    })
+    // for(const [key,value] of Object.entries(info)){
+    //     console.log(`key =>${key} || value => ${value}`)
+
+    // }
 
     var randomNumber = Math.floor(Math.random()*100);
     console.log(randomNumber);
@@ -26,9 +48,9 @@ btnAdd.addEventListener('click',()=>{
                  </tr>`
     Table.innerHTML+=template;
               });
-            Object.entries(localStorage).forEach(([randomNumber,info])=>{
-                console.log(`${randomNumber.toString()}=> ${info}`);
-                // document.getElementById("randomNumber.toString()").innerHTML=localStorage.getItem("info");
-                
-            })
+btnRem.addEventListener('click',()=>{
+    window.localStorage.clear();
+    window.location.reload();
+})
+    
 
