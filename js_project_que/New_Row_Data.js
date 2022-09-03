@@ -22,7 +22,7 @@ const template = `
 console.log(template)
 Table.innerHTML+=template
 }
-
+// this
 
 btnAdd.addEventListener('click',()=>{
     let name1 =nameInput.value;
